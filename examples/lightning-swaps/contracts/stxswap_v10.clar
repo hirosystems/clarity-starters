@@ -66,7 +66,7 @@
     (claimer tx-sender)
     (swap (unwrap! (map-get? swaps { hash: preimageHash }) ERR_SWAP_NOT_FOUND))
   )
-    (asserts! (> block-height (get timelock swap)) ERR_REFUND_BLOCKHEIGHT_NOT_REACHED)
+    (asserts! (> tenure-height (get timelock swap)) ERR_REFUND_BLOCKHEIGHT_NOT_REACHED)
     (asserts! (is-eq claimer (get initiator swap)) ERR_INVALID_CLAIMER)
     (map-delete swaps { hash: preimageHash })
     (try! (as-contract (stx-transfer? (get amount swap) tx-sender claimer)))

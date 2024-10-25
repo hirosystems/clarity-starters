@@ -61,5 +61,5 @@ plan:
             contract-name: fungible-token
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/fungible-token.clar
-            clarity-version: 2
-      epoch: "2.4"
+            clarity-version: 3
+      epoch: "3.0"

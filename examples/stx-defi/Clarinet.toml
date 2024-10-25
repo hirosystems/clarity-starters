@@ -7,8 +7,8 @@ cache_dir = "./.cache"
 requirements = []
 [contracts.stx-defi]
 path = "contracts/stx-defi.clar"
-clarity_version = 2
-epoch = 2.4
+clarity_version = 3
+epoch = 3.0
 
 [repl]
 clarity_wasm_mode = false
