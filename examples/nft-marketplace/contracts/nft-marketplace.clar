@@ -96,7 +96,7 @@
     ;; Verify that the contract of this asset is whitelisted
     (asserts! (is-whitelisted (contract-of nft-asset-contract)) ERR_ASSET_CONTRACT_NOT_WHITELISTED)
     ;; Verify that the asset is not expired
-    (asserts! (> (get expiry nft-asset) tenure-height) ERR_EXPIRY_IN_PAST)
+    (asserts! (> (get expiry nft-asset) burn-block-height) ERR_EXPIRY_IN_PAST)
     ;; Verify that the asset price is greater than zero
     (asserts! (> (get price nft-asset) u0) ERR_PRICE_ZERO)
     ;; Verify that the contract of the payment is whitelisted
@@ -174,7 +174,7 @@
       ERR_UNINTENDED_TAKER
     )
     ;; Verify the listing for purchase is not expired
-    (asserts! (< tenure-height (get expiry listing)) ERR_LISTING_EXPIRED)
+    (asserts! (< burn-block-height (get expiry listing)) ERR_LISTING_EXPIRED)
     ;; Verify the asset contract used to purchase the NFT is the same as the one set on the NFT
     (asserts! (is-eq (get nft-asset-contract listing) nft-asset-contract) ERR_NFT_ASSET_MISMATCH)
     ;; Verify the payment contract used to purchase the NFT is the same as the one set on the NFT
