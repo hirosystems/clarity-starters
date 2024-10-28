@@ -50,21 +50,24 @@ plan:
     - id: 0
       transactions:
         - emulated-contract-publish:
-            contract-name: sip013-semi-fungible-token-trait
-            emulated-sender: SPDBEG5X8XD50SPM1JJH0E5CTXGDV5NJTKAKKR5V
-            path: "./.cache/requirements/SPDBEG5X8XD50SPM1JJH0E5CTXGDV5NJTKAKKR5V.sip013-semi-fungible-token-trait.clar"
-            clarity-version: 1
-        - emulated-contract-publish:
-            contract-name: sip013-transfer-many-trait
-            emulated-sender: SPDBEG5X8XD50SPM1JJH0E5CTXGDV5NJTKAKKR5V
-            path: "./.cache/requirements/SPDBEG5X8XD50SPM1JJH0E5CTXGDV5NJTKAKKR5V.sip013-transfer-many-trait.clar"
+            contract-name: nft-trait
+            emulated-sender: SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9
+            path: "./.cache/requirements/SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.clar"
             clarity-version: 1
       epoch: "2.1"
     - id: 1
       transactions:
         - emulated-contract-publish:
-            contract-name: semi-fungible-token
-            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
-            path: contracts/semi-fungible-token.clar
+            contract-name: clarity-bitcoin-lib-v5
+            emulated-sender: SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9
+            path: "./.cache/requirements/SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.clarity-bitcoin-lib-v5.clar"
             clarity-version: 2
-      epoch: "2.5"
+      epoch: "2.4"
+    - id: 2
+      transactions:
+        - emulated-contract-publish:
+            contract-name: btc-tx-enabled-nft
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/btc-tx-enabled-nft.clar
+            clarity-version: 3
+      epoch: "3.0"

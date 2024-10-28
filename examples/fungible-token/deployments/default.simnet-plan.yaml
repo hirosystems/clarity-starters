@@ -58,6 +58,11 @@ plan:
     - id: 1
       transactions:
         - emulated-contract-publish:
+            contract-name: defi
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/extern/defi.clar
+            clarity-version: 3
+        - emulated-contract-publish:
             contract-name: fungible-token
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/fungible-token.clar

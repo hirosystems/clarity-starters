@@ -1,5 +1,5 @@
 {
-  "clarinetVersion": "3.0.0",
+  "clarinetVersion": "2.10.0",
   "examples": [
     {
       "title": "blank-project",
@@ -7,8 +7,8 @@
       "path": "examples/blank-project"
     },
     {
-      "title": "btc-tx-enabled-nft",
-      "description": "A Clarity smart contract that allows you to mint an NFT based on a bitcoin transaction.",
+      "title": "'btc-tx-enabled-nft'",
+      "description": "'A Clarity smart contract that allows you to mint an NFT based on a bitcoin transaction.'",
       "path": "examples/btc-tx-enabled-nft"
     },
     {
