@@ -61,7 +61,7 @@
             (try! (as-contract (stx-transfer? amount tx-sender recipient)))
         )
         ;; Update the user's loan details in the map.
-        (map-set loans tx-sender { amount: new-loan, last-interaction-block: block-height })
+        (map-set loans tx-sender { amount: new-loan, last-interaction-block: burn-block-height })
         ;; Return success.
         (ok true)
     )
@@ -107,7 +107,7 @@
         ;; Transfer the repayment amount from the user to the contract.
         (try! (stx-transfer? amount tx-sender (as-contract tx-sender)))
         ;; Update the user's loan details in the map with the new total due.
-        (map-set loans tx-sender { amount: (- total-due amount), last-interaction-block: block-height })
+        (map-set loans tx-sender { amount: (- total-due amount), last-interaction-block: burn-block-height })
         ;; Update the pool reserve with the paid interest.
         (var-set pool-reserve (+ (var-get pool-reserve) accrued-interest))
         ;; Return success.
@@ -138,7 +138,7 @@
 (define-private (calculate-accrued-interest (principal uint) (start-block uint))
     (let (
         ;; Calculate the number of blocks elapsed since the last interaction.
-        (elapsed-blocks (- block-height start-block))
+        (elapsed-blocks (- burn-block-height start-block))
         ;; Calculate the interest based on the principal, rate, and elapsed time.
         (interest (/ (* principal (var-get loan-interest-rate) elapsed-blocks) u10000))
     )

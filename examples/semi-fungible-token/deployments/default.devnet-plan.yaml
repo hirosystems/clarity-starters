@@ -33,5 +33,5 @@ plan:
             cost: 44080
             path: contracts/semi-fungible-token.clar
             anchor-block-only: true
-            clarity-version: 2
-      epoch: "2.5"
+            clarity-version: 3
+      epoch: "3.0"
