@@ -52,7 +52,7 @@
         ;; Calculate the total amount due including interest.
         (total-due (+ (get amount current-loan-details) (unwrap-panic accrued-interest)))
         ;; Calculate the new loan total after borrowing additional amount.
-        (new-loan (+ amount))
+        (new-loan (+ (get amount current-loan-details) amount))
     )
         ;; Ensure the requested borrow amount does not exceed the allowed amount.
         (asserts! (<= new-loan allowed-borrow) err-overborrow)
